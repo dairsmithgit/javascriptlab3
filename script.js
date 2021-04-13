@@ -39,5 +39,19 @@ function deleteSubmissionByIndex (array, index) {
 }
 
 function deleteSubmissionByName (array, name) {
-    array.splice( array.findIndex(name), 1 );
+    const nameDelete = array.findIndex( (array) => array.name === name);
+    array.splice(nameDelete, 1);
+}
+
+function editSubmission (array, index, score) {
+    array[index].score = score;
+    if (array[index].score >= 60) {
+        array[index].passed = true;
+    } else {
+        array[index].passed = false;
+    }
+}
+
+function findSubmissionByName (array, name) {
+    const subName = array.find( (array) => array.name === name);
 }
