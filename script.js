@@ -33,3 +33,11 @@ function addSubmission(array, newName, newScore, newDate) {
     passed: newScore >= 60 ? true : false,
   });
 }
+
+function deleteSubmissionByIndex (array, index) {
+    array.splice(index, 1);
+}
+
+function deleteSubmissionByName (array, name) {
+    array.splice( array.findIndex(name), 1 );
+}
