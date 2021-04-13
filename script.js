@@ -55,3 +55,12 @@ function editSubmission (array, index, score) {
 function findSubmissionByName (array, name) {
     const subName = array.find( (array) => array.name === name);
 }
+
+function findLowestScore (array) {
+    const lowScore = array[0];
+    array.forEach(function(score) {
+        if (score < lowScore) {
+            lowScore = score;
+        }
+    });
+}
