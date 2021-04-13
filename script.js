@@ -34,16 +34,16 @@ function addSubmission(array, newName, newScore, newDate) {
   });
 }
 
-function deleteSubmissionByIndex (array, index) {
+function deleteSubmissionByIndex(array, index) {
     array.splice(index, 1);
 }
 
-function deleteSubmissionByName (array, name) {
+function deleteSubmissionByName(array, name) {
     const nameDelete = array.findIndex( (array) => array.name === name);
     array.splice(nameDelete, 1);
 }
 
-function editSubmission (array, index, score) {
+function editSubmission(array, index, score) {
     array[index].score = score;
     if (array[index].score >= 60) {
         array[index].passed = true;
@@ -52,11 +52,11 @@ function editSubmission (array, index, score) {
     }
 }
 
-function findSubmissionByName (array, name) {
+function findSubmissionByName(array, name) {
     const subName = array.find( (array) => array.name === name);
 }
 
-function findLowestScore (array) {
+function findLowestScore(array) {
     const lowScore = array[0];
     array.forEach(function(score) {
         if (score < lowScore) {
@@ -64,3 +64,15 @@ function findLowestScore (array) {
         }
     });
 }
+
+function findAverageScore(array) {
+    let scoreSum = 0;
+    for (let score of array) {
+        scoreSum += score;
+    }
+    let scoreAvg = scoreSum / array.length;
+    console.log(scoreAvg);
+}
+
+let testArray = [1, 2, 3, 4, 5];
+findAverageScore(testArray);
