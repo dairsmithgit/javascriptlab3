@@ -54,13 +54,14 @@ function editSubmission(array, index, score) {
 
 function findSubmissionByName(array, name) {
     const subName = array.find( (array) => array.name === name);
+    return subName;
 }
 
 function findLowestScore(array) {
-    const lowScore = array[0];
-    array.forEach(function(score) {
+    const lowScore = array.score[0];
+    array.forEach((score) => {
         if (score < lowScore) {
-            lowScore = score;
+            lowScore = this.score;
         }
     });
 }
@@ -74,5 +75,12 @@ function findAverageScore(array) {
     console.log(scoreAvg);
 }
 
-let testArray = [1, 2, 3, 4, 5];
-findAverageScore(testArray);
+function filterPassing(array) {
+    const filteredPass = array.filter( (array) => array.passed === true);
+    return filteredPass;
+}
+
+function filter90AndAbove(array) {
+    const highMarks = array.filter( (array) => array.score >= 90);
+    return highMarks;
+}
